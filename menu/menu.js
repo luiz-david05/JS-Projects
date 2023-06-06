@@ -15,7 +15,12 @@ import {
     reduzir_vetor,
     somatorio,
     media_vetor, mediana_vetor,
-    sortear_elemento} from './menu_utils.js'
+    sortear_elemento,
+    gerar_n_grupos,
+    verificar_se_vetor_esta_contido_em_outro,
+    verificar_se_elementos_estao_na_mesma_ordem,
+    top_n_maiores_elementos,
+    top_n_menores_elementos} from './menu_utils.js'
 
 
 function main() {
@@ -52,7 +57,7 @@ function main() {
             opcao = opcao_valida()
         }
         else if (opcao === 4) {
-            mostrar_vetor(vetor)
+            mostrar_vetor(vetor, "Vetor: ")
             continuar()
             menu()
             opcao = opcao_valida()
@@ -120,7 +125,7 @@ function main() {
 
             console.log(`\nMaior elemento do vetor: ${maior}`)
             console.log(`Menor elemento do vetor: ${menor}`)
-            continuar()
+            continuar() 
             menu()
             opcao = opcao_valida()
         }
@@ -133,6 +138,51 @@ function main() {
 
             console.log(`\nElemento positivo sorteado: ${elemento_positivo}`)
             console.log(`Elemento negativo sorteado: ${elemento_negativo}`)
+            continuar()
+            menu()
+            opcao = opcao_valida()
+        }
+        else if (opcao === 11) {
+            const n = get_number("valor de n: ")
+            const tamanho = get_number("tamanho dos grupos: ")
+            const grupos = gerar_n_grupos(vetor, n, tamanho)
+
+            console.log("\nGrupos gerados com sucesso!")
+            console.log(grupos)
+            continuar()
+            menu()
+            opcao = opcao_valida()
+        }
+        else if (opcao === 12) {
+            let novo_vetor = criar_vetor_vazio()
+            novo_vetor = preencher_vetor_automaticamente(novo_vetor)
+
+            mostrar_vetor(vetor, "Vetor original: ")
+            mostrar_vetor(novo_vetor, "Vetor novo: ")
+
+            if (verificar_se_vetor_esta_contido_em_outro(vetor, novo_vetor) && verificar_se_elementos_estao_na_mesma_ordem(vetor, novo_vetor)) {
+                console.log("\nEstá contido 100% e estão na mesma ordem")
+            }
+            else {
+                console.log("\nNão está contido 100% ou não estão na mesma ordem")
+            }
+
+            continuar()
+            menu()
+            opcao = opcao_valida()
+        }
+        else if (opcao === 13) {
+            const n = get_positive_number("valor de n: ")
+
+            console.log(`Top ${n} maiores elementos do vetor: [${top_n_maiores_elementos(vetor, n)}]`)
+            continuar()
+            menu()
+            opcao = opcao_valida()
+        }
+        else if (opcao === 14) {
+            const n = get_positive_number("valor de n: ")
+
+            console.log(`Top ${n} menores elementos do vetor: [${top_n_menores_elementos(vetor, n)}]`)
             continuar()
             menu()
             opcao = opcao_valida()
@@ -153,6 +203,10 @@ function menu() {
     console.log("8 - Exibir média e mediana de: todos os elementos do vetor, apenas os positivos e \napenas os negativos (separadamente)")
     console.log("9 - Exibir maior e menor elemento do vetor")
     console.log("10 - Sortear dois valores do vetor: um positivo e outro negativo")
+    console.log("11 - Gerar N grupos de T tamanho (sem valores repetidos) a partir do vetor")
+    console.log("12 - Gerar novo vetor e verificar se o novo está 100% presente no original (e na mesma ordem)")
+    console.log("13 - Top N maiores elementos no vetor")
+    console.log("14 - Top N menores elementos no vetor")
     console.log("0 - sair")
 }
 
@@ -160,7 +214,7 @@ function menu() {
 function opcao_valida() {
     let opcao = get_number("\nDigite uma opção: ")
 
-    if (opcao < 0 || opcao > 10) {
+    if (opcao < 0 || opcao > 14) {
         console.log("Opção inválida, tente novamente.")
         opcao = opcao_valida()
     }
@@ -175,7 +229,9 @@ const continuar = () => {
 
 
 const tchau = () => {
-    const tchaus = ["Hasta la vista, baby", "See you later, space cowboy", "I'll be back", "Que a força esteja com você", "Acabou!", ]
+    const tchaus = [
+        "Hasta la vista, baby", "See you later, space cowboy",
+        "I'll be back", "Que a força esteja com você", "Acabou!", ]
 
     const tchau = tchaus[Math.floor(Math.random() * tchaus.length)]
 

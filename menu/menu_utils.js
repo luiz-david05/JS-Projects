@@ -42,8 +42,8 @@ export const preencher_vetor_automaticamente = (vetor) => {
 }
 
 
-export const mostrar_vetor = (vetor) => {
-    console.log("\nVetor:")
+export const mostrar_vetor = (vetor, texto) => {
+    console.log("\n", texto)
     console.table(vetor)
 }
 
@@ -152,17 +152,88 @@ export const sortear_elemento = (vetor) => {
 }
 
 
-// const teste = () => {
-//     const vetor = [5, 2, 9, -1, 7, 6, -3, -2]
-    
-//     const positivos = filtrar_vetor(vetor, eh_positivo)
-//     const negativos = filtrar_vetor(vetor, eh_negativo)
-    
-//     const elemento_positivo = sortear_elemento(positivos)
-//     const elemento_negativo = sortear_elemento(negativos)
+export function gerar_n_grupos(vetor, n, t) {
+    const grupos = []
 
-//     console.log(elemento_positivo)
-//     console.log(elemento_negativo)
+    for (let i = 0; i < n; i++) {
+        const grupo = []
+
+        while (grupo.length < t) {
+            const elemento = sortear_elemento(vetor)
+
+            if (!inclue(grupo, elemento)) {
+                adicionar_elemento(grupo, elemento)
+            }
+        }
+
+        adicionar_elemento(grupos, grupo)
+    }
+
+    return grupos
+}
+
+
+export const inclue = (vetor, elemento) => {
+    for (const elemento_vetor of vetor) {
+        if (elemento_vetor === elemento) {
+            return true
+        }
+    }
+}
+
+
+export const verificar_se_vetor_esta_contido_em_outro = (vetor, outro_vetor) => {
+    for (const elemento of vetor) {
+        if (!inclue(outro_vetor, elemento)) {
+            return false
+        }
+    }
+
+    return true
+}
+
+
+export const verificar_se_elementos_estao_na_mesma_ordem = (vetor, outro_vetor) => {
+    for (let i = 0; i < vetor.length; i++) {
+        if (vetor[i] !== outro_vetor[i]) {
+            return false
+        }
+    }
+
+    return true
+}
+
+
+export const top_n_maiores_elementos = (vetor, n) => {
+    const vetor_ordenado = ordenar_vetor(vetor)
+    const vetor_top_n = []
+
+    for (let i = 0; i < n; i++) {
+        adicionar_elemento(vetor_top_n, vetor_ordenado[vetor_ordenado.length - 1 - i])
+    }
+
+    return vetor_top_n
+}
+
+
+export const top_n_menores_elementos = (vetor, n) => {
+    const vetor_ordenado = ordenar_vetor(vetor)
+    const vetor_top_n = []
+
+    for (let i = 0; i < n; i++) {
+        adicionar_elemento(vetor_top_n, vetor_ordenado[i])
+    }
+
+    return vetor_top_n
+}
+
+
+// const teste = () => {
+//     const vetor = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+//     const n = get_positive_number("Digite um número positivo: ")
+
+//     console.log(`Top ${n} maiores elementos do vetor: [${top_n_maiores_elementos(vetor, n)}]`)
+//     console.log(`Top ${n} menores elementos do vetor: [${top_n_menores_elementos(vetor, n)}]`)
 // }
 
 
