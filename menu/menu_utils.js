@@ -43,7 +43,7 @@ export const preencher_vetor_automaticamente = (vetor) => {
 
 
 export const mostrar_vetor = (vetor, texto) => {
-    console.log("\n", texto)
+    console.log(`\n${texto}`)
     console.table(vetor)
 }
 
@@ -59,11 +59,7 @@ export const mapear_vetor = (vetor, funcao) => {
 }
 
 
-export const elevar_elementos_a_n = (n) => {
-    return (elemento) => {
-        return elemento ** n
-    }
-}
+export const elevar_elementos_a_n = (n) => elemento =>  n ** elemento
 
 
 const adicionar_elemento = (vetor, elemento) => {   
@@ -88,13 +84,14 @@ export const filtrar_vetor = (vetor, funcao) => {
 export const eh_positivo = (n) => n > 0
 export const eh_negativo = (n) => n < 0
 export const eh_nulo = (n) => n === 0
-const eh_par = (n) => n % 2 === 0
+export const eh_par = (n) => n % 2 === 0
+export const eh_impar = (n) => n % 2 !== 0
 
 
 export const reduzir_vetor = (vetor, funcao) => {
-    let valor_reduzido = 0
+    let valor_reduzido = vetor[0]
 
-    for (let i = 0; i < vetor.length; i++) {
+    for (let i = 1; i < vetor.length; i++) {
         valor_reduzido = funcao(valor_reduzido, vetor[i])
     }
 
@@ -151,7 +148,7 @@ export const sortear_elemento = (vetor) => {
     return vetor[indice_sorteado]
 }
 
-
+// há um erro aqui
 export function gerar_n_grupos(vetor, n, t) {
     const grupos = []
 
@@ -172,13 +169,15 @@ export function gerar_n_grupos(vetor, n, t) {
     return grupos
 }
 
-
+// há um erro aqui
 export const inclue = (vetor, elemento) => {
     for (const elemento_vetor of vetor) {
         if (elemento_vetor === elemento) {
             return true
         }
     }
+
+    return false
 }
 
 
@@ -228,12 +227,60 @@ export const top_n_menores_elementos = (vetor, n) => {
 }
 
 
-// const teste = () => {
-//     const vetor = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-//     const n = get_positive_number("Digite um número positivo: ")
+export const valor_medio_no_vetor = (vetor) => {
+    const vetor_ordenado = ordenar_vetor(vetor)
 
-//     console.log(`Top ${n} maiores elementos do vetor: [${top_n_maiores_elementos(vetor, n)}]`)
-//     console.log(`Top ${n} menores elementos do vetor: [${top_n_menores_elementos(vetor, n)}]`)
+    return (vetor_ordenado[0] + vetor_ordenado[vetor_ordenado.length - 1]) / 2
+}
+
+
+export const eh_maior_que_a_media = (media) => item => item > media
+export const eh_menor_que_a_media = (media) => item => item < media
+
+
+export const produto = (acumulado, elemento) => acumulado * elemento
+export const dividir_pela_metade = item => item / 2
+
+
+export const eh_multiplo = (n) => (item) => item % n === 0
+
+
+export const ordenar_vetor_decrescente = (vetor) => {
+    for (let i = 0; i < vetor.length; i++) {
+        for (let j = 0; j < vetor.length - 1; j++) {
+            if (vetor[j] < vetor[j + 1]) {
+                const aux = vetor[j]
+                vetor[j] = vetor[j + 1]
+                vetor[j + 1] = aux
+            }
+        }
+    }
+
+    return vetor
+}
+
+
+export const eliminar_multiplos_de_n_m = (vetor, n, m) => {
+    const vetor_filtrado = []
+
+    for (const item of vetor) {
+        if (item % n !== 0 && item % m !== 0) {
+            adicionar_elemento(vetor_filtrado, item)
+        }
+    }
+
+    return vetor_filtrado
+}
+
+
+// const teste = () => {
+//     let vetor = [1, -2, 3, -4, -5, 6, 7, 8, 9, 10]
+//     const n = get_number("Digite o valor de N: ")
+//     const m = get_number("Digite o valor de M: ")
+    
+//     vetor = eliminar_multiplos_de_n_m(vetor, n, m)
+
+//     mostrar_vetor(vetor, `Vetor sem múltiplos de ${n} e ${m}: `)
 // }
 
 
