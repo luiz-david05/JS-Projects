@@ -2,7 +2,14 @@ import { question } from "readline-sync";
 
 
 export const input = (questionText) => {
-  return question(questionText)
+  let answer = question(questionText);
+
+  if (answer === " ") {
+    console.log("Valor inválido, tente novamente.");
+    answer = input(questionText);
+  }
+  
+  return answer;
 }
 
 
