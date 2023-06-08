@@ -148,7 +148,7 @@ export const sortear_elemento = (vetor) => {
     return vetor[indice_sorteado]
 }
 
-// há um erro aqui
+
 export function gerar_n_grupos(vetor, n, t) {
     const grupos = []
 
@@ -169,7 +169,7 @@ export function gerar_n_grupos(vetor, n, t) {
     return grupos
 }
 
-// há um erro aqui
+
 export const inclue = (vetor, elemento) => {
     for (const elemento_vetor of vetor) {
         if (elemento_vetor === elemento) {

@@ -1,7 +1,9 @@
 import { 
     get_number,
     get_positive_number, 
-    input} from "./entrada_utils.js";
+    input
+    } from "./entrada_utils.js";
+
 import {
     criar_vetor_vazio,
     elevar_elementos_a_n,
@@ -27,7 +29,8 @@ import {
     eh_multiplo,
     ordenar_vetor,
     ordenar_vetor_decrescente,
-    eliminar_multiplos_de_n_m} from './menu_utils.js'
+    eliminar_multiplos_de_n_m
+    } from './menu_utils.js'
 
 
 function main() {
@@ -353,7 +356,7 @@ function menu() {
 function opcao_valida() {
     let opcao = get_number("\nDigite uma opção: ")
 
-    if (opcao < 0 || opcao > 18) {
+    if (opcao < 0 || opcao > 19) {
         console.log("Opção inválida, tente novamente.")
         opcao = opcao_valida()
     }
@@ -394,7 +397,7 @@ const tchau = () => {
 
 const menu_ordenar = () => {
     console.log("Ordenar: todos, ou apenas pares, ou impares, ou positivos ou negativos, \nou ainda apenas os múltiplos (positivos ou negativos) de N ?")
-    console.log("1 - Todos")
+    console.log("\n1 - Todos")
     console.log("2 - Pares")
     console.log("3 - Impares")
     console.log("4 - Positivos")
@@ -406,7 +409,7 @@ const menu_ordenar = () => {
 const opcao_valida_ordenar = (texto) => {
     let opcao = get_positive_number(texto)
 
-    if (opcao < 1 && opcao > 6) {
+    if (opcao < 1 || opcao > 6) {
         console.log("Opção inválida!")
         opcao = opcao_valida_ordenar(texto)
     }
