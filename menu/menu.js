@@ -313,7 +313,7 @@ function main() {
             menu()
             opcao = opcao_valida()
         }
-        else if (opc === 19) {
+        else if (opcao === 19) {
             const n = get_number("Digite o valor de N: ")
             const m = get_number("Digite o valor de M: ")
 
