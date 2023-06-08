@@ -2,7 +2,7 @@ import {
     get_number,
     get_positive_number, 
     input
-    } from "./entrada_utils.js";
+    } from "./entrada_utils.js"
 
 import {
     criar_vetor_vazio,
@@ -247,27 +247,38 @@ function main() {
         
             if (opcao_ordenar === 1) {
                 vetor_ordenado = ordenar_vetor(vetor)
+                mostrar_vetor(vetor_ordenado, "Vetor ordenado em ordem crescente: ")
             }
             else if (opcao_ordenar === 2) {
                 const vetor_pares = filtrar_vetor(vetor, eh_par)
+                mostrar_vetor(vetor_pares, "Vetor de pares: ")
                 vetor_ordenado = ordenar_vetor(vetor_pares)
+                mostrar_vetor(vetor_ordenado, "Vetor de pares ordenado em ordem crescente: ")
             }
             else if (opcao_ordenar === 3) {
                 const vetor_impares = filtrar_vetor(vetor, eh_impar)
+                mostrar_vetor(vetor_impares, "Vetor de ímpares: ")
                 vetor_ordenado = ordenar_vetor(vetor_impares)
+                mostrar_vetor(vetor_ordenado, "Vetor de ímpares ordenado em ordem crescente: ")
             }
             else if (opcao_ordenar === 4) {
                 const vetor_positivos = filtrar_vetor(vetor, eh_positivo)
+                mostrar_vetor(vetor_positivos, "Vetor de positivos: ")
                 vetor_ordenado = ordenar_vetor(vetor_positivos)
+                mostrar_vetor(vetor_ordenado, "Vetor de positivos ordenado em ordem crescente: ")
             }
             else if (opcao_ordenar === 5) {
                 const vetor_negativos = filtrar_vetor(vetor, eh_negativo)
+                mostrar_vetor(vetor_negativos, "Vetor de negativos: ")
                 vetor_ordenado = ordenar_vetor(vetor_negativos)
+                mostrar_vetor(vetor_ordenado, "Vetor de negativos ordenado em ordem crescente: ")
             }
             else if (opcao_ordenar === 6) {
                 const n = get_positive_number("\nDigite o valor de N: ")
                 const vetor_multiplos = filtrar_vetor(vetor, eh_multiplo(n))
+                mostrar_vetor(vetor_multiplos, `Vetor de múltiplos de ${n}: `)
                 vetor_ordenado = ordenar_vetor(vetor_multiplos)
+                mostrar_vetor(vetor_ordenado, `Vetor de múltiplos de ${n} ordenado em ordem crescente: `)
             }
         
             console.log("\nVetor ordenado com sucesso!")
@@ -287,24 +298,34 @@ function main() {
             }
             else if (opcao_ordenar === 2) {
                 const vetor_pares = filtrar_vetor(vetor, eh_par)
+                mostrar_vetor(vetor_pares, "Vetor de pares: ")
                 vetor_ordenado = ordenar_vetor_decrescente(vetor_pares)
+                mostrar_vetor(vetor_ordenado, "Vetor de pares ordenado em ordem decrescente: ")
             }
             else if (opcao_ordenar === 3) {
                 const vetor_impares = filtrar_vetor(vetor, eh_impar)
+                mostrar_vetor(vetor_impares, "Vetor de ímpares: ")
                 vetor_ordenado = ordenar_vetor_decrescente(vetor_impares)
+                mostrar_vetor(vetor_ordenado, "Vetor de ímpares ordenado em ordem decrescente: ")
             }
             else if (opcao_ordenar === 4) {
                 const vetor_positivos = filtrar_vetor(vetor, eh_positivo)
+                mostrar_vetor(vetor_positivos, "Vetor de positivos: ")
                 vetor_ordenado = ordenar_vetor_decrescente(vetor_positivos)
+                mostrar_vetor(vetor_ordenado, "Vetor de positivos ordenado em ordem decrescente: ")
             }
             else if (opcao_ordenar === 5) {
                 const vetor_negativos = filtrar_vetor(vetor, eh_negativo)
+                mostrar_vetor(vetor_negativos, "Vetor de negativos: ")
                 vetor_ordenado = ordenar_vetor_decrescente(vetor_negativos)
+                mostrar_vetor(vetor_ordenado, "Vetor de negativos ordenado em ordem decrescente: ")
             }
             else if (opcao_ordenar === 6) {
                 const n = get_positive_number("Digite o valor de N: ")
                 const vetor_multiplos = filtrar_vetor(vetor, eh_multiplo(n))
+                mostrar_vetor(vetor_multiplos, `Vetor de múltiplos de ${n}: `)
                 vetor_ordenado = ordenar_vetor_decrescente(vetor_multiplos)
+                mostrar_vetor(vetor_ordenado, `Vetor de múltiplos de ${n} ordenado em ordem decrescente: `)
             }
 
             console.log("\nVetor ordenado com sucesso!")
