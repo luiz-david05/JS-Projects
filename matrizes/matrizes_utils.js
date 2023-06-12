@@ -96,3 +96,113 @@ export const calcular_determinante = (matriz, n) => {
 
     return determinante
 }
+
+
+export const maior_e_menor_elemento = (matriz) => {
+    let maior = matriz[0][0]
+    let menor = matriz[0][0]
+
+    let posicao_maior = [0, 0]
+    let posicao_menor = [0, 0]
+
+    for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz.length; j++){
+            if (matriz[i][j] > maior) {
+                maior = matriz[i][j]
+                posicao_maior = [i, j]
+            }
+
+            if (matriz[i][j] < menor) {
+                menor = matriz[i][j]
+                posicao_menor = [i, j]
+            }
+        }
+    }
+
+    return [maior, menor, posicao_maior, posicao_menor]
+}
+
+
+export const verificar_se_matriz_e_simetrica = (matriz) => {
+    for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz.length; j++){
+            if (matriz[i][j] != matriz[j][i]) {
+                return false
+            }
+        }
+    }
+
+    return true
+}
+
+
+export const mostrar_matriz = (matriz) => {
+    console.log("\nMatriz:")
+    console.table(matriz)
+}
+
+
+export const gerar_matriz_identidade = (matriz) => {
+    for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[0].length; j++){
+            if (i == j) {
+                matriz[i][j] = 1
+            }
+            else {
+                matriz[i][j] = 0
+            }
+        }
+    }
+    return matriz
+}
+
+
+export const maior_e_menor_soma = (matriz) => {
+    let maior = 0
+    let menor = 0
+    let linha_maior = 0
+    let linha_menor = 0
+
+    for (let i = 0; i < matriz.length; i++) {
+        let soma = 0
+        for (let j = 0; j < matriz[0].length; j++) {
+            soma += matriz[i][j]
+        }
+
+        if (i == 0) {
+            maior = soma
+            menor = soma
+        }
+        else {
+            if (soma > maior) {
+                maior = soma
+                linha_maior = i
+            }
+            else if (soma < menor) {
+                menor = soma
+                linha_menor = i
+            }
+        }
+    }
+
+    return [linha_maior, linha_menor]
+}
+
+
+export const soma_positivos_e_negativos = (matriz) => {
+    let soma_positivos = 0
+    let soma_negativos = 0
+
+    for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz.length; j++) {
+            if (matriz[i][j] > 0) {
+                soma_positivos += matriz[i][j]
+            }
+            else {
+                soma_negativos += matriz[i][j]
+            }
+        }
+    }
+
+    return [soma_positivos, soma_negativos]
+}
