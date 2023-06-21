@@ -4,33 +4,33 @@ import { question } from "readline-sync";
 export const input = (questionText) => {
   let answer = question(questionText);
 
-  if (answer === " ") {
-    console.log("Valor inválido, tente novamente.");
-    answer = input(questionText);
+  while (answer === "") {
+    console.log("Digite alguma coisa, tente novamente.")
+    answer = question(questionText);
   }
   
   return answer;
 }
 
 
-export const get_number = (questionText) => {
+export const getNumber = (questionText) => {
     let number = Number(input(questionText))
 
-    if (isNaN(number)) {
-        console.log("Digite um número válido, tente novamente.")
-        number = get_number(questionText)
+    while (isNaN(number)) {
+        console.log("Digite um número, tente novamente.")
+        number = Number(input(questionText))
     }
 
     return number
 }
 
 
-export const get_positive_number = (questionText) => {
-    let number = get_number(questionText)
+export const getPositiveNumber = (questionText) => {
+    let number = getNumber(questionText)
     
-    if (number <= 0) {
-        console.log("Digite um número positivo maior que 0, tente novamente.")
-        number = get_positive_number(questionText)
+    while (number <= 0) {
+        console.log("Digite um número positivo maior que zero, tente novamente.")
+        number = getNumber(questionText)
     }
 
     return number

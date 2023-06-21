@@ -1,82 +1,182 @@
 import {
-    get_number,
+    getNumber,
     input 
     } from "../../entrada_utils.js";
 
 import {
-    q1, q2, q3, q4, q5, q6, q7, q8, q9 
+    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12,
+    q13, q14, q15, q16, q17, q18, q19, q20, q21, q22,
+    q23
     } from "./questoes.js";
 
 
 function main() {
     console.log();   
     menu();
-    let opcao = opcao_menu();
+    let opcao = opcaoMenu();
     console.log();
 
-    while (opcao != 0) {
-        if (opcao == 1) {
+    while (opcao !== 0) {
+        if (opcao === 1) {
             q1();
             
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
         }
-        else if (opcao == 2) {
+        else if (opcao === 2) {
             q2();
 
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
         }
-        else if (opcao == 3) {
+        else if (opcao === 3) {
             q3();
 
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
         }
-        else if (opcao == 4) {
+        else if (opcao === 4) {
             q4();
 
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
         }
-        else if (opcao == 5) {
+        else if (opcao === 5) {
             q5();
 
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
         }
-        else if (opcao == 6) {
+        else if (opcao === 6) {
             q6();
 
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
         }
-        else if (opcao == 7) {
+        else if (opcao === 7) {
             q7();
 
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
         }
-        else if (opcao == 8) {
+        else if (opcao === 8) {
             q8();
 
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
         }
-        else if (opcao == 9) {
+        else if (opcao === 9) {
             q9();
 
             continuar();
             menu();
-            opcao = opcao_menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 10) {
+            q10();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 11) {
+            q11();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 12) {
+            q12();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 13) {
+            q13();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 14) {
+            q14();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 15) {
+            q15();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 16) {
+            q16();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 17) {
+            q17();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 18) {
+            q18();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 19) {
+            q19();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 20) {
+            q20();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 21) {
+            q21();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 22) {
+            q22();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
+        }
+        else if (opcao === 23) {
+            q23();
+
+            continuar();
+            menu();
+            opcao = opcaoMenu();
         }
     }
     tchau();
@@ -85,7 +185,8 @@ function main() {
 
 function menu() {
     console.log();
-    console.log('\x1b[36m%s\x1b[0m',"\tLista 1 Professor Fábio Gomes")
+    console.log('\x1b[36m%s\x1b[0m',"\tLista 01 Estrutura Sequencial - Professor Fábio Gomes")
+    console.log("\n0 - Sair");
     console.log("\n1 - Converte de metros/s para km/h");
     console.log("2 - Converte de horas/minutos para minutos");
     console.log("3 - Converte de minutos para horas/minutos");
@@ -95,19 +196,40 @@ function menu() {
     console.log("7 - A soma dos 2 primeiros números e a diferença dos 2 últimos números");
     console.log("8 - A divisão da soma pela subtração de 2 números");
     console.log("9 - Escreve números na ordem inversa");
+    console.log("10 - Escreve quotiente e resto da divisão de 2 números");
+    console.log("11 - Inverte a ordem dos elementos de um número");
+    console.log("12 - Calcula um aumento salarial de 25%");
+    console.log("13 - Calcula 70% de um número")
+    console.log("14 - Calcula a média ponderada de 3 notas");
 
-    console.log("\n0 - Sair");
+    let pergunta = input("\nDeseja ver mais opções do menu? (s/n) ");
+
+    while (pergunta !== "s" && pergunta !== "n") {
+        console.log("\nOpção inválida!");
+        pergunta = input("\nDeseja ver mais opções do menu? (s/n) ");
+    }
+
+    if (pergunta === "s") {
+        console.log("15 - Calcula a área de um triângulo");
+        console.log("16 - Calcula a área de um quadrado");
+        console.log("17 - Calcula a área de um retângulo");
+        console.log("18 - Calcula o comprimento de uma circunferência");
+        console.log("19 - Calcula o volume de uma esfera");
+        console.log("20 - Converte de graus Celsius para Fahrenheit");
+        console.log("21 - Converte de graus Fahrenheit para Celsius");
+        console.log("22 - Converte uma distância em km para metros");
+        console.log("23 - Converte um peso em kg para gramas");
+    }
 }
 
 
-function opcao_menu() {
-    let opcao = get_number("\nDigite a opção desejada: ");
+function opcaoMenu() {
+    let opcao = getNumber("\nDigite a opção desejada: ");
 
-    if (opcao < 0 || opcao > 9) {
+    while (opcao < 0 || opcao > 23) {
         console.log("\nOpção inválida!");
-        opcao = opcao_menu();
+        opcao = getNumber("\nDigite a opção desejada: ");
     }
-
     return opcao;
 }
 
@@ -115,35 +237,35 @@ function opcao_menu() {
 const continuar = () => {
     let pergunta = input("\nDeseja continuar? (s/n) ");
 
-    if (pergunta != "s" && pergunta != "n") {
+    while (pergunta !== "s" && pergunta !== "n") {
         console.log("\nOpção inválida!");
-        pergunta = continuar();
+        pergunta = input("\nDeseja continuar? (s/n) ");
     }
 
-    if (pergunta == "n") {
+    if (pergunta === "n") {
         tchau();
         process.exit(0);
     }
     else{
         let pergunta2 = input("\nDeseja limpar a tela? (s/n) ");
 
-        if (pergunta2 != "s" && pergunta2 != "n") {
-            console.log("\nOpção inválida!");
-            pergunta2 = continuar();
-        }
+        while (pergunta2 !== "s" && pergunta2 !== "n") {
+            pergunta2 = input("\nDeseja limpar a tela? (s/n) ");
+            if (pergunta2 !== "s" && pergunta2 !== "n") {
+              console.log("\nOpção inválida!");
+            }
+          }
 
         if (pergunta2 == "s") {
             console.clear();
-        }
-
-        return;
+        } 
     }
 
     return pergunta;
 }
 
 
-const tchau = (nome) => {
+const tchau = () => {
     const tchaus = [
         "Tchau!", 
         "Até mais!", 
