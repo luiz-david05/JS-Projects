@@ -17,7 +17,7 @@ export const get_number = (questionText) => {
     let number = Number(input(questionText))
 
     if (isNaN(number)) {
-        console.log("Valor inválido, tente novamente.")
+        console.log("Digite um número válido, tente novamente.")
         number = get_number(questionText)
     }
 
@@ -28,8 +28,8 @@ export const get_number = (questionText) => {
 export const get_positive_number = (questionText) => {
     let number = get_number(questionText)
     
-    if (number < 0) {
-        console.log("Valor inválido, tente novamente.")
+    if (number <= 0) {
+        console.log("Digite um número positivo maior que 0, tente novamente.")
         number = get_positive_number(questionText)
     }
 
