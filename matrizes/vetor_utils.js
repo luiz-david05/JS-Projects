@@ -1,4 +1,4 @@
-export const criar_vetor = (tamanho) => {
+export const criarVetor = (tamanho) => {
     let vetor = []
 
     for (let i = 0; i < tamanho; i++) {
@@ -8,7 +8,7 @@ export const criar_vetor = (tamanho) => {
 }
 
 
-export const preencher_vetor_automaticamente = (vetor) => {
+export const preencherVetorAutomaticamente = (vetor) => {
     for (let i = 0; i < vetor.length; i++) {
         vetor[i] = Math.floor(Math.random() * 100)
     }
@@ -16,11 +16,11 @@ export const preencher_vetor_automaticamente = (vetor) => {
 }
 
 
-export const ordenar_vetor = (vetor) => vetor.sort((a, b) => a - b)
+export const ordenarVetor = (vetor) => vetor.sort((a, b) => a - b)
 
 
-export const termos_fibo = (n) => {
-    let vetor = criar_vetor(n)
+export const termosFibo = (n) => {
+    let vetor = criarVetor(n)
 
     for (let i = 0; i < vetor.length; i++) {
         if (i < 2) {
@@ -31,14 +31,3 @@ export const termos_fibo = (n) => {
     }
     return vetor
 }
-
-
-// const teste = () => {
-//     let vetor = criar_vetor(10)
-//     vetor = preencher_vetor_automaticamente(vetor)
-//     console.log(vetor)
-//     console.log(ordenar_vetor(vetor))
-// }
-
-
-// teste()
