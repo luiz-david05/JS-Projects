@@ -1,17 +1,33 @@
-import {
-    getNumber,
-    input 
-    } from "../../entrada_utils.js";
+import { getNumber, input } from "../../entrada_utils.js";
 
 import {
-    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12,
-    q13, q14, q15, q16, q17, q18, q19, q20, q21, q22,
-    q23
-    } from "./questoes.js";
-
+    q1,
+    q2,
+    q3,
+    q4,
+    q5,
+    q6,
+    q7,
+    q8,
+    q9,
+    q10,
+    q11,
+    q12,
+    q13,
+    q14,
+    q15,
+    q16,
+    q17,
+    q18,
+    q19,
+    q20,
+    q21,
+    q22,
+    q23,
+} from "./q1_q23.js";
 
 function main() {
-    console.log();   
+    console.log();
     menu();
     let opcao = opcaoMenu();
     console.log();
@@ -19,159 +35,137 @@ function main() {
     while (opcao !== 0) {
         if (opcao === 1) {
             q1();
-            
+
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 2) {
+        } else if (opcao === 2) {
             q2();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 3) {
+        } else if (opcao === 3) {
             q3();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 4) {
+        } else if (opcao === 4) {
             q4();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 5) {
+        } else if (opcao === 5) {
             q5();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 6) {
+        } else if (opcao === 6) {
             q6();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 7) {
+        } else if (opcao === 7) {
             q7();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 8) {
+        } else if (opcao === 8) {
             q8();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 9) {
+        } else if (opcao === 9) {
             q9();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 10) {
+        } else if (opcao === 10) {
             q10();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 11) {
+        } else if (opcao === 11) {
             q11();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 12) {
+        } else if (opcao === 12) {
             q12();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 13) {
+        } else if (opcao === 13) {
             q13();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 14) {
+        } else if (opcao === 14) {
             q14();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 15) {
+        } else if (opcao === 15) {
             q15();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 16) {
+        } else if (opcao === 16) {
             q16();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 17) {
+        } else if (opcao === 17) {
             q17();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 18) {
+        } else if (opcao === 18) {
             q18();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 19) {
+        } else if (opcao === 19) {
             q19();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 20) {
+        } else if (opcao === 20) {
             q20();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 21) {
+        } else if (opcao === 21) {
             q21();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 22) {
+        } else if (opcao === 22) {
             q22();
 
             continuar();
             menu();
             opcao = opcaoMenu();
-        }
-        else if (opcao === 23) {
+        } else if (opcao === 23) {
             q23();
 
             continuar();
@@ -182,10 +176,12 @@ function main() {
     tchau();
 }
 
-
 function menu() {
     console.log();
-    console.log('\x1b[36m%s\x1b[0m',"\tLista 01 Estrutura Sequencial - Professor Fábio Gomes")
+    console.log(
+        "\x1b[36m%s\x1b[0m",
+        "\tLista 01 Estrutura Sequencial - Professor Fábio Gomes"
+    );
     console.log("\n0 - Sair");
     console.log("\n1 - Converte de metros/s para km/h");
     console.log("2 - Converte de horas/minutos para minutos");
@@ -193,13 +189,15 @@ function menu() {
     console.log("4 - Converte de reais para dólares");
     console.log("5 - Somar elementos de um número");
     console.log("6 - Converte de km/h para metros/s");
-    console.log("7 - A soma dos 2 primeiros números e a diferença dos 2 últimos números");
+    console.log(
+        "7 - A soma dos 2 primeiros números e a diferença dos 2 últimos números"
+    );
     console.log("8 - A divisão da soma pela subtração de 2 números");
     console.log("9 - Escreve números na ordem inversa");
     console.log("10 - Escreve quotiente e resto da divisão de 2 números");
     console.log("11 - Inverte a ordem dos elementos de um número");
     console.log("12 - Calcula um aumento salarial de 25%");
-    console.log("13 - Calcula 70% de um número")
+    console.log("13 - Calcula 70% de um número");
     console.log("14 - Calcula a média ponderada de 3 notas");
 
     let pergunta = input("\nDeseja ver mais opções do menu? (s/n) ");
@@ -222,7 +220,6 @@ function menu() {
     }
 }
 
-
 function opcaoMenu() {
     let opcao = getNumber("\nDigite a opção desejada: ");
 
@@ -232,7 +229,6 @@ function opcaoMenu() {
     }
     return opcao;
 }
-
 
 const continuar = () => {
     let pergunta = input("\nDeseja continuar? (s/n) ");
@@ -245,33 +241,31 @@ const continuar = () => {
     if (pergunta === "n") {
         tchau();
         process.exit(0);
-    }
-    else{
+    } else {
         let pergunta2 = input("\nDeseja limpar a tela? (s/n) ");
 
         while (pergunta2 !== "s" && pergunta2 !== "n") {
             pergunta2 = input("\nDeseja limpar a tela? (s/n) ");
             if (pergunta2 !== "s" && pergunta2 !== "n") {
-              console.log("\nOpção inválida!");
+                console.log("\nOpção inválida!");
             }
-          }
+        }
 
         if (pergunta2 == "s") {
             console.clear();
-        } 
+        }
     }
 
     return pergunta;
-}
-
+};
 
 const tchau = () => {
     const tchaus = [
-        "Tchau!", 
-        "Até mais!", 
-        "Até logo!", 
-        "Até amanhã!", 
-        "Até breve!"
+        "Tchau!",
+        "Até mais!",
+        "Até logo!",
+        "Até amanhã!",
+        "Até breve!",
     ];
 
     const mensagens = [
@@ -284,21 +278,25 @@ const tchau = () => {
         "Não busque a aprovação dos outros. Seja \nverdadeiro consigo mesmo e viva de acordo com seus princípios.",
         "A maior riqueza é ter paz de espírito e \ncontentamento com o que se tem.",
         "Aprenda a desapegar-se das coisas materiais, \npois a verdadeira riqueza está na sabedoria e virtude.",
-        "A felicidade não depende das circunstâncias externas, \nmas da forma como escolhemos reagir a elas."
+        "A felicidade não depende das circunstâncias externas, \nmas da forma como escolhemos reagir a elas.",
     ];
 
     const cores = [
         "\x1b[31m%s\x1b[0m",
         "\x1b[32m%s\x1b[0m",
         "\x1b[33m%s\x1b[0m",
-        "\x1b[37m%s\x1b[0m"
-    ]
+        "\x1b[37m%s\x1b[0m",
+    ];
 
     const tchauAleatorio = tchaus[Math.floor(Math.random() * tchaus.length)];
-    const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+    const mensagemAleatoria =
+        mensagens[Math.floor(Math.random() * mensagens.length)];
     const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
 
-    console.log(`\n${corAleatoria}`, `${tchauAleatorio} \n"${mensagemAleatoria}"`);
-}
+    console.log(
+        `\n${corAleatoria}`,
+        `${tchauAleatorio} \n"${mensagemAleatoria}"`
+    );
+};
 
 main();
