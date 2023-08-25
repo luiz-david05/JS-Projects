@@ -1,5 +1,6 @@
 import { getPositiveNumber, input } from "../../entrada_utils.js";
 
+
 export const q1 = () => {
     const metros = getPositiveNumber("Digite a velocidade em metros/s: ");
 
@@ -7,6 +8,7 @@ export const q1 = () => {
 
     console.log(`\n${metros} metros/s equivale a ${km.toFixed(1)} km/h`);
 };
+
 
 export const q2 = () => {
     const [horas, minutos] = input("Digite as horas e minutos (ex: 10:30): ")
@@ -20,6 +22,7 @@ export const q2 = () => {
     );
 };
 
+
 export const q3 = () => {
     const minutos = getPositiveNumber("Digite a quantidade de minutos: ");
 
@@ -31,6 +34,7 @@ export const q3 = () => {
     );
 };
 
+
 export const q4 = () => {
     const reais = getPositiveNumber("Digite o valor em reais: ");
     const cotacao = getPositiveNumber("Digite a cotação do dólar: ");
@@ -40,6 +44,7 @@ export const q4 = () => {
     console.log(`\n${reais} reais equivale a ${dolares.toFixed(2)} dólares`);
 };
 
+
 export const q5 = () => {
     const numero = getPositiveNumber("Digite um número: ");
 
@@ -48,6 +53,7 @@ export const q5 = () => {
     console.log(`\nA soma dos elementos de ${numero} é ${soma}`);
 };
 
+
 export const q6 = () => {
     const km = getPositiveNumber("Digite a velocidade em km/h: ");
 
@@ -55,6 +61,7 @@ export const q6 = () => {
 
     console.log(`\n${km} km/h equivale a ${metros.toFixed(1)} metros/s`);
 };
+
 
 export const q7 = () => {
     const n1 = getPositiveNumber("Digite o primeiro número: ");
@@ -69,6 +76,7 @@ export const q7 = () => {
     );
 };
 
+
 export const q8 = () => {
     const n1 = getPositiveNumber("Digite o primeiro número: ");
     const n2 = getPositiveNumber("Digite o segundo número: ");
@@ -82,12 +90,14 @@ export const q8 = () => {
     );
 };
 
+
 export const q9 = () => {
     const n1 = getPositiveNumber("Digite o primeiro número: ");
     const n2 = getPositiveNumber("Digite o segundo número: ");
 
     console.log(`\nNúmeros na ordem inversa: ${n2} ${n1}`);
 };
+
 
 export const q10 = () => {
     const n1 = getPositiveNumber("Digite o primeiro número: ");
@@ -100,6 +110,7 @@ export const q10 = () => {
     console.log(`Resto: ${resto}`);
 };
 
+
 export const q11 = () => {
     const n = getPositiveNumber("Digite um número: ");
 
@@ -107,6 +118,7 @@ export const q11 = () => {
 
     console.log(`\nNúmero invertido: ${nInvertido}`);
 };
+
 
 export const q12 = () => {
     const salario = getPositiveNumber("Digite o salário: ");
@@ -118,6 +130,7 @@ export const q12 = () => {
     console.log(`Novo salário: ${novoSalario}`);
 };
 
+
 export const q13 = () => {
     const n = getPositiveNumber("Digite um número: ");
 
@@ -125,6 +138,7 @@ export const q13 = () => {
 
     console.log(`\n70% de ${n} é ${setentaPorcento.toFixed(1)}`);
 };
+
 
 export const q14 = () => {
     const notas = input("Digite as notas (ex: 10 9 8): ")
@@ -140,6 +154,7 @@ export const q14 = () => {
     console.log(`\nMédia ponderada: ${mediaPonderada.toFixed(1)}`);
 };
 
+
 export const q15 = () => {
     const base = getPositiveNumber("Digite a base do triângulo: ");
     const altura = getPositiveNumber("Digite a altura do triângulo: ");
@@ -149,6 +164,7 @@ export const q15 = () => {
     console.log(`\nÁrea do triângulo: ${area.toFixed(1)}`);
 };
 
+
 export const q16 = () => {
     const lado = getPositiveNumber("Digite o lado do quadrado: ");
 
@@ -156,6 +172,7 @@ export const q16 = () => {
 
     console.log(`\nÁrea do quadrado: ${area.toFixed(1)}`);
 };
+
 
 export const q17 = () => {
     const base = getPositiveNumber("Digite a base do retângulo: ");
@@ -166,6 +183,7 @@ export const q17 = () => {
     console.log(`\nÁrea do retângulo: ${area.toFixed(1)}`);
 };
 
+
 export const q18 = () => {
     const raio = getPositiveNumber("Digite o raio do círculo: ");
 
@@ -174,6 +192,7 @@ export const q18 = () => {
     console.log(`\nÁrea do círculo: ${area.toFixed(1)}`);
 };
 
+
 export const q19 = () => {
     const raio = getPositiveNumber("Digite o raio da esfera: ");
 
@@ -181,6 +200,7 @@ export const q19 = () => {
 
     console.log(`\nVolume da esfera: ${volume.toFixed(1)}`);
 };
+
 
 export const q20 = () => {
     const temperaturaCelsius = getPositiveNumber(
@@ -194,6 +214,7 @@ export const q20 = () => {
     );
 };
 
+
 export const q21 = () => {
     const temperaturaFahrenheit = getPositiveNumber(
         "Digite a temperatura em Fahrenheit: "
@@ -204,6 +225,7 @@ export const q21 = () => {
     console.log(`\nTemperatura em Celsius: ${temperaturaCelsius.toFixed(1)}`);
 };
 
+
 export const q22 = () => {
     const distanciaKm = getPositiveNumber("Digite a distância em km: ");
 
@@ -211,6 +233,7 @@ export const q22 = () => {
 
     console.log(`\nDistância em metros: ${distanciaMetros.toFixed(1)}`);
 };
+
 
 export const q23 = () => {
     const pesoKg = getPositiveNumber("Digite o peso em kg: ");
